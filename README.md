@@ -134,3 +134,52 @@ python3 -c 'import pty;pty.spawn("/bin/bash")'
 
 <img width="1317" height="781" alt="image" src="https://github.com/user-attachments/assets/a70d4c43-ba31-447f-bb34-a96d05904681" />
 
+tôi dùng hashcat để bẻ khóa băm của diego 
+
+hashcat -m 400 hash.txt /usr/share/wordlists/rockyou.txt -O -w 3
+
+<img width="891" height="644" alt="image" src="https://github.com/user-attachments/assets/da840e48-1386-4089-9501-3baf30b38377" />
+
+đã có password 
+
+<img width="506" height="178" alt="image" src="https://github.com/user-attachments/assets/8edf1318-5ce3-4394-92d7-d20b6d9915c8" />
+
+cờ user : 45edaec653ff9ee06236b7ce72b86963
+
+tôi vào thử người dùng think sau đó lấy id_rsa 
+
+<img width="793" height="613" alt="image" src="https://github.com/user-attachments/assets/5d3766f6-efcd-42dc-bdb6-0b76bc97c47c" />
+
+sau đó sử dụng nó để đăng nhập ssh 
+
+<img width="921" height="649" alt="image" src="https://github.com/user-attachments/assets/c8aa1216-5a99-47f9-9e69-24d71270327c" />
+
+sau đó tôi lấy file wordpress.old.zip về máy tôi 
+
+<img width="1246" height="198" alt="image" src="https://github.com/user-attachments/assets/78089999-25bc-4dd8-870f-afc291956c9d" />
+
+phát hiện ra file này unzip cần password 
+
+sử dụng john 
+
+zip2john wordpress.old.zip > hash.txt
+
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+
+<img width="834" height="196" alt="image" src="https://github.com/user-attachments/assets/7b931e0b-d762-48d1-81e9-dde89d6923c4" />
+
+sau đó unzip 
+
+<img width="1221" height="712" alt="image" src="https://github.com/user-attachments/assets/f259b9ff-0708-4a57-8931-c4c372d6864f" />
+
+phát hiện ra trong file wp-config.php có password của tài khoản có tên là xavi 
+
+P@ssw0rdxavi@
+
+<img width="1096" height="636" alt="image" src="https://github.com/user-attachments/assets/79e83e8f-a65e-4dc3-a39f-3bc9ebdebbb1" />
+
+tôi chuyển sang người dùng xavi bằng lệnh su xavi 
+
+và với người dùng xavi ta có quyền sudo 
+
+<img width="941" height="712" alt="image" src="https://github.com/user-attachments/assets/63a4c836-65d7-4669-8433-a321581153d2" />
