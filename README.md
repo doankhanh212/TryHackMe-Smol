@@ -183,3 +183,5 @@ tôi chuyển sang người dùng xavi bằng lệnh su xavi
 và với người dùng xavi ta có quyền sudo 
 
 <img width="941" height="712" alt="image" src="https://github.com/user-attachments/assets/63a4c836-65d7-4669-8433-a321581153d2" />
+
+cờ root : bf89ea3ea01992353aef1f576214d4e4
